@@ -83,13 +83,20 @@ time, mark, audio, video {
 }
 
 #cart-container {
+    border-radius: 25px;
     display: none;
-    width: 100%;
+    margin: 15px auto 0 auto;
+    width: 65%;
     height: 100%;
     min-height: 300px;
     padding: 10px;
-    background: gray;
-    box-shadow: 2px 2px 2px #000;
+    background: #f08686;
+    box-shadow: 2px 2px 4px rgb(31, 31, 31);
+}
+#cart-container h1 {
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .product {
