@@ -8,6 +8,8 @@ var order = {
 var isCheckoutOn = false;
 
 $('#to-checkout').click(function() {
+    if (cart != "" ){
+
     if (isCheckoutOn) {
         $('#to-checkout').text("Continua");
         $('#checkout').hide();
@@ -18,6 +20,8 @@ $('#to-checkout').click(function() {
         $('#checkout').show();
         $('#cart-products').hide();
         isCheckoutOn = true;
+    } } else {
+        alert("Adauga cel putin un produs inainte de a trimite comanda.")
     }
 
     
@@ -25,6 +29,7 @@ $('#to-checkout').click(function() {
 });
 
 $('#place-order').click(function() {
+    
     order.name = $('#name').val();
     order.phone = $('#phone').val();
     order.email = $('#email').val();
