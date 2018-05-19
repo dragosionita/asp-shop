@@ -19,6 +19,9 @@ $('#to-checkout').click(function() {
         $('#cart-products').hide();
         isCheckoutOn = true;
     }
+
+    
+    
 });
 
 $('#place-order').click(function() {
@@ -27,6 +30,16 @@ $('#place-order').click(function() {
     order.email = $('#email').val();
     order.cart = cart;
 
-    console.log('Comanda ta: ', order);
-    alert(order.name + "" + ', comanda ta a fost plasata.');
+    if(order.name == '') {
+        alert('Va rugam sa introduceti numele dumneavoastra');
+    } else if( order.phone=='') {
+        alert('Va rugam sa introduceti numarul de telefon');
+    } else if ( order.email=='') { 
+        alert('Va rugam sa introduceti adresa de mail') ;
+        
+    }else {
+        console.log('Comanda ta: ', order);
+        alert(order.name + "" + ', comanda ta a fost plasata.');
+    }
+    
 });
