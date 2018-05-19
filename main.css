@@ -145,7 +145,7 @@ time, mark, audio, video {
 }
 
 #cart-button {
-    background: yellow;
+    background: red;
     border-radius: 4px;
     float: right;
     width: 50px;
