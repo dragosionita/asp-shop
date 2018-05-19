@@ -152,12 +152,17 @@ time, mark, audio, video {
 }
 
 #cart-button {
-    background: red;
+    box-sizing: border-box;
+    border: 2px solid;
+    background-image: url(cart.png);
+    background-size: 45px 45px;
+    background-repeat: no-repeat;
+    box-shadow: -4px 4px 2px 2px;
     border-radius: 4px;
     float: right;
     width: 50px;
     height: 50px;
-    margin-right: 20px;
+    margin-right: 50px;
     cursor: pointer;
 }
 
