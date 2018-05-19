@@ -24,8 +24,14 @@ function prepareAddToCart() {
         }
     
         cart.push(product);
-        alert('Produsul dumneavoastra a fost adaugat in cos!');
-        console.log("COSUL: ", cart);
+        swal({
+            title: 'Produsul a fost adaugat in cos!',
+            type: 'success',
+            showConfirmButton: 'false',
+            onOpen: () => {
+                
+            }
+          })
     });
 }
 

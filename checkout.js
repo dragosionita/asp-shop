@@ -21,7 +21,14 @@ $('#to-checkout').click(function() {
         $('#cart-products').hide();
         isCheckoutOn = true;
     } } else {
-        alert("Adauga cel putin un produs inainte de a trimite comanda.")
+        swal({
+            title: 'Adauga cel putin un produs inainte de a trimite comanda!',
+            type: 'error',
+            showConfirmButton: 'false',
+            onOpen: () => {
+                
+            }
+          })
     }
 
     
@@ -36,15 +43,34 @@ $('#place-order').click(function() {
     order.cart = cart;
 
     if(order.name == '') {
-        alert('Va rugam sa introduceti numele dumneavoastra');
+        swal({
+            title: 'Va rugam sa introduceti numele dumneavoastra!',
+            type: 'error',
+            showConfirmButton: 'false',
+            onOpen: () => {
+                            }
+          })
     } else if( order.phone=='') {
-        alert('Va rugam sa introduceti numarul de telefon');
-    } else if ( order.email=='') { 
-        alert('Va rugam sa introduceti adresa de mail') ;
+        swal({
+            title: 'Va rugam sa introduceti numarul de telefon!',
+            type: 'error',
+            showConfirmButton: 'false',
+            onOpen: () => {
+                            }
+          })
+    } else if ( order.email=='') {
+        swal({
+            title: 'Va rugam sa introduceti adresa dumneavoastra de e-mail!',
+            type: 'error',
+            showConfirmButton: 'false',
+            onOpen: () => {
+                            }
+          })
         
     }else {
         console.log('Comanda ta: ', order);
-        alert(order.name + "" + ', comanda ta a fost plasata.');
+        var swalConfirmedOrder = order.name + " , comanda ta a fost plasata cu succes."; swal({ text: swalConfirmedOrder, type: "success", confirmButtonText: "Cool" });
+        //alert(order.name + "" + ', comanda ta a fost plasata.');
     }
     
 });
