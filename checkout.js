@@ -9,15 +9,15 @@ var isCheckoutOn = false;
 
 $('#to-checkout').click(function() {
     if (isCheckoutOn) {
-        $('#to-checkout').text("Continua");
-        $('#checkout').hide();
-        $('#cart-products').show();    
-        isCheckoutOn = false;
+        $('#to-checkout').text("Continuă");
+        $('#checkout').fadeOut("slow");
+        $('#cart-products').fadeIn("slow");
+        isCheckOutOn = false;
     } else {
-        $('#to-checkout').text("Inapoi");
-        $('#checkout').show();
-        $('#cart-products').hide();
-        isCheckoutOn = true;
+        $('#to-checkout').text("Înapoi");
+        $('#checkout').fadeIn("slow");
+        $('#cart-products').fadeOut("slow");
+        isCheckOutOn = true;
     }
 });
 
