@@ -1,0 +1,166 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+
+}
+.clearfix {
+    clear: both;
+}
+#header {
+    width: 100%;
+    height: 80px;
+    background: #aaaaaa94;
+}
+
+#footer {
+    width: 100%;
+    height: 50px;
+    background: #aaaaaa94;
+}
+
+#footer p {
+    text-align: center;
+    width: 100%;
+    color: #0d0d0d
+}
+
+.wrapper {
+    width: 100%;
+    background-color: #aaaaaa94;
+}
+
+.menu {
+    width: 130px;
+    height: 100%;
+    float: left;
+    margin-top: 20px;
+}
+.menu a{
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 25px;
+}
+
+.container {
+    width: calc(100% - 130px);
+    float: left;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#products-list {
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+}
+
+#products-list li{
+    width: 33%;
+    margin: 0;
+    padding: 15px;
+    list-style-type: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#cart-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    padding: 10px;
+    background: gray;
+    box-shadow: 2px 2px 2px #000;
+}
+
+.product {
+    float: left;
+    width: 20%;
+    border: 1px solid black;
+}
+
+.categ a{
+    color: blue;
+    margin-left: 10px;
+}
+.top-menu-placer {
+    float: right;
+    padding-right: 50px;
+}
+#header h1 {
+    padding-left: 50px;
+}
+.product-images {
+    width: 310px;
+    height: 450px;
+    display: block;
+    margin: auto;
+}
+.h1 {
+    display: block;
+    clear: both;
+}
+.product-size {
+    float: left;
+    margin: 0 20px 0 10px;
+}
+.product-price {
+    display: block;
+    text-align: right;
+    padding-right: 30px;
+}
+.product-title {
+    margin: 10px 0 10px 10px;
+}
+.top-menu {
+    list-style-type: none;
+}
+.top-menu a{
+    text-decoration: none;
+}
+#top-menu li{
+    padding-right: 15px;
+    list-style-type: none;
+    display: inline-block;
+    font-size: 25px;
+}
+
+#cart-button {
+    background: yellow;
+    border-radius: 4px;
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+/*
+Urmatorul css va fi pentru plasare comanda
+*/
+#checkout {
+    display: none;
+    padding: 10px;
+    border: 1px solid #fdfdfd;
+    background: #98c1f794
+}
