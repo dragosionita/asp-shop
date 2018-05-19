@@ -28,5 +28,5 @@ $('#place-order').click(function() {
     order.cart = cart;
 
     console.log('Comanda ta: ', order);
-    alert('Draga, comanda ta a fost plasata.');
+    alert(order.name + "" + ', comanda ta a fost plasata.');
 });
