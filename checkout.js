@@ -5,10 +5,10 @@ var order = {
     cart: []
 }
 
-var isCheckoutOn = false;
+var isCheckOutOn = false;
 
-$('#to-checkout').click(function() {
-    if (isCheckoutOn) {
+$('#to-checkout').click(function(){
+    if (isCheckOutOn == true) {
         $('#to-checkout').text("Continuă");
         $('#checkout').fadeOut("slow");
         $('#cart-products').fadeIn("slow");
@@ -19,7 +19,7 @@ $('#to-checkout').click(function() {
         $('#cart-products').fadeOut("slow");
         isCheckOutOn = true;
     }
-});
+})
 
 $('#place-order').click(function() {
     order.name = $('#name').val();
