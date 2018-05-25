@@ -2,15 +2,15 @@ var topMenu = {
     menuLinks: [
         {
             name: "Contact",
-            link: "contact.html"
+            identifier: "contact"
         },
         {
             name: "Livrare",
-            link: "livrare.html"
+            identifier: "delivery"
         },
         {
             name: "Despre Noi",
-            link: "despre.html"
+            identifier: "about"
         }
     ]
 }
@@ -29,7 +29,9 @@ function drawtopMenu() {
 
         var a = document.createElement("a");
         a.innerText = topMenu.menuLinks[i].name;
-        a.href= topMenu.menuLinks[i].link;
+        a.href= "#";
+        a.classList.add("nav-top-button");
+        a.setAttribute('identifier', topMenu.menuLinks[i].identifier)
         
         li.appendChild(a);
         topMenuUlElement.appendChild(li);
@@ -37,3 +39,8 @@ function drawtopMenu() {
 }
 
 drawtopMenu();
+
+$(".nav-top-button").click(function() {
+    var clickedButton = $(this).attr('identifier');
+    $('#cms-' + clickedButton).show();
+});

@@ -198,3 +198,11 @@ Urmatorul css va fi pentru plasare comanda
     width: 80px;
     height: 50px;
 }
+
+
+.cms {
+    width: 100%;
+    min-height: 400px;
+    background: #f08686;
+    display: none;
+}
