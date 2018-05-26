@@ -41,7 +41,15 @@ drawtopMenu();
 
 $(".nav-top-button").click(function() {
     var clickedButton = $(this).attr('identifier');
-    $('.cms').hide();
-    $('#products-list').hide();
+    hideAll();
+    
     $('#cms-' + clickedButton).show();
 });
+
+// functia de mai jos ascunde toate 
+// container-ele din DOM
+function hideAll() {
+    $('.cms').hide();
+    $('#products-list').hide();
+    $('#cart-container').hide();
+}

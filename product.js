@@ -1,5 +1,11 @@
 
 function drawProducts(categoryId) {
+    // le ascund pe toate
+    hideAll();
+
+    // asfiseaza doar product list-ul
+    $('#products-list').show();
+
     var productListElement = document.getElementById("products-list");
     productListElement.innerHTML = '';
 

@@ -3,6 +3,8 @@ var cart = [];
 
 // eveniment click pe navigatie -> schimbat categortii
 $('.categ a').click(function()  {
+    
+
     // setez categoria curenta cu atributul cat-id de pe fiecare <a>
     currentCategory = $(this).attr("cat-id");
 
@@ -42,6 +44,7 @@ prepareAddToCart();
 var cartState = false;
 
 $('#cart-button').click(function() {
+    hideAll();
     //alert('am apasat');
     if (cartState == false) {
         $('#products-list').fadeOut("slow");
