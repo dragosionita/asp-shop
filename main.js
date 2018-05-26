@@ -47,4 +47,5 @@ var cartState = false;
 $('#cart-button').click(function() {
     hideAll();
     $('#cart-container').fadeIn("slow");
+    drawCartProducts(cart);
 });
