@@ -68,3 +68,6 @@ $('#cart-button').click(function() {
     $('#cart-container').fadeIn("slow");
     drawCartProducts(cart);
 });
+
+
+
