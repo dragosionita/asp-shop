@@ -18,7 +18,7 @@ function drawCartProducts(cart) {
             } 
         }
 
-        li.innerText = produsMare.title + "Pret: " + produsMare.price + "lei";
+        li.innerText = cart[i].qty + 'x ' + produsMare.title + "Pret: " + produsMare.price + "lei";
 
         // adauga cate un li per fiecare produs din cart
         cartProductsElement.appendChild(li);

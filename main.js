@@ -23,10 +23,27 @@ function prepareAddToCart() {
     $('.add-to-cart').click(function() {
         var product = {
             sku: $(this).attr("sku"),
-            categoryId: $(this).attr("category-id")
+            categoryId: $(this).attr("category-id"),
+            qty: 1
         }
-    
-        cart.push(product);
+        
+        if (cart.length != 0) {
+            for(var i = 0; i < cart.length; i++) {
+                if (cart[i].sku == product.sku) {
+                    cart[i].qty++;
+                } else {
+                    cart.push(product);
+                }
+
+                break;
+            }
+        } else {
+            cart.push(product);
+        }
+            
+        
+        
+
         swal({
             title: 'Produsul a fost adaugat in cos!',
             type: 'success',
@@ -34,7 +51,9 @@ function prepareAddToCart() {
             onOpen: () => {
                 
             }
-          })
+        });
+
+        console.log('cart', cart);
     });
 }
 

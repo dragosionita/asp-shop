@@ -206,3 +206,7 @@ Urmatorul css va fi pentru plasare comanda
     background: #f08686;
     display: none;
 }
+
+#cart-products {
+    list-style-type: none;
+}
