@@ -15,8 +15,6 @@ function drawNavigation() {
         li.appendChild(a);
         navUlElement.appendChild(li);
     }
-
-    
 }
 
 drawNavigation();

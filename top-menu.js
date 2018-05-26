@@ -32,7 +32,6 @@ function drawtopMenu() {
         a.href= "#";
         a.classList.add("nav-top-button");
         a.setAttribute('identifier', topMenu.menuLinks[i].identifier)
-        
         li.appendChild(a);
         topMenuUlElement.appendChild(li);
     }
@@ -42,5 +41,7 @@ drawtopMenu();
 
 $(".nav-top-button").click(function() {
     var clickedButton = $(this).attr('identifier');
+    $('.cms').hide();
+    $('#products-list').hide();
     $('#cms-' + clickedButton).show();
 });
