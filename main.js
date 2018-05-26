@@ -3,7 +3,8 @@ var cart = [];
 
 // eveniment click pe navigatie -> schimbat categortii
 $('.categ a').click(function()  {
-    
+    // le ascund pe toate
+    hideAll();
 
     // setez categoria curenta cu atributul cat-id de pe fiecare <a>
     currentCategory = $(this).attr("cat-id");
@@ -45,15 +46,5 @@ var cartState = false;
 
 $('#cart-button').click(function() {
     hideAll();
-    //alert('am apasat');
-    if (cartState == false) {
-        $('#products-list').fadeOut("slow");
-        $('#cart-container').fadeIn("slow");
-        drawCartProducts(cart);
-        cartState = true;
-    } else {
-        $('#products-list').fadeIn("slow");
-        $('#cart-container').fadeOut("slow");
-        cartState = false;
-    }
+    $('#cart-container').fadeIn("slow");
 });
