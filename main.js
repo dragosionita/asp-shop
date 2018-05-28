@@ -54,7 +54,12 @@ function prepareAddToCart() {
         });
 
         console.log('cart', cart);
+
+              
     });
+
+
+
 }
 
 // apelare metoda de adaugare event pe butoanele de add-to-cart 

@@ -210,3 +210,15 @@ Urmatorul css va fi pentru plasare comanda
 #cart-products {
     list-style-type: none;
 }
+
+
+.qty {
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    padding-top:0;
+    padding-bottom: 0
+
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
