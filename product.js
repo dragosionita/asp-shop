@@ -29,6 +29,24 @@ function drawProducts(categoryId) {
         p1.className = "product-size";
         p1.innerText = "Marime";
 
+        //create popup
+        var popup=document.createElement('div');
+        popup.classList.add("popup");
+        li.appendChild(popup);
+
+        var poza = document.createElement('div');
+        poza.classList.add("poza");
+        popup.appendChild(poza);
+        var img = document.createElement("img");
+        img.src = products[categoryId][i].imageSource;
+        poza.appendChild(img);
+
+        var titlu=document.createElement('h1');
+        titlu.classList.add("titlu");
+        titlu.innerHTML=products[categoryId][i].title;
+        poza.appendChild(titlu);
+
+
         var select = document.createElement("select");
       
         for (var j = 0; j < products[categoryId][i].sizes.length; j++) {
@@ -58,6 +76,22 @@ function drawProducts(categoryId) {
         li.appendChild(addToCartButton);
         productListElement.appendChild(li);
     }
+
+
+    var images=document.querySelectorAll(".product-images");
+    var popup=document.querySelectorAll(".popup");
+    //console.log(images)
+    for(let x = 0; x < images.length; x++){
+        images[x].addEventListener("click", function(){
+        popup[x].style.display="block"
+        })
+        popup[x].addEventListener("click", function(){
+            popup[x].style.display="none"
+            })
+    }
+
 }
 
 drawProducts(currentCategory);
+
+
