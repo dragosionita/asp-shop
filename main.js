@@ -3,6 +3,9 @@ var cart = [];
 
 // eveniment click pe navigatie -> schimbat categortii
 $('.categ a').click(function()  {
+    // le ascund pe toate
+    hideAll();
+
     // setez categoria curenta cu atributul cat-id de pe fiecare <a>
     currentCategory = $(this).attr("cat-id");
 
@@ -20,10 +23,27 @@ function prepareAddToCart() {
     $('.add-to-cart').click(function() {
         var product = {
             sku: $(this).attr("sku"),
-            categoryId: $(this).attr("category-id")
+            categoryId: $(this).attr("category-id"),
+            qty: 1
         }
-    
-        cart.push(product);
+        
+        if (cart.length != 0) {
+            for(var i = 0; i < cart.length; i++) {
+                if (cart[i].sku == product.sku) {
+                    cart[i].qty++;
+                } else {
+                    cart.push(product);
+                }
+
+                break;
+            }
+        } else {
+            cart.push(product);
+        }
+            
+        
+        
+
         swal({
             title: 'Produsul a fost adaugat in cos!',
             type: 'success',
@@ -31,8 +51,15 @@ function prepareAddToCart() {
             onOpen: () => {
                 
             }
-          })
+        });
+
+        console.log('cart', cart);
+
+              
     });
+
+
+
 }
 
 // apelare metoda de adaugare event pe butoanele de add-to-cart 
@@ -42,15 +69,10 @@ prepareAddToCart();
 var cartState = false;
 
 $('#cart-button').click(function() {
-    //alert('am apasat');
-    if (cartState == false) {
-        $('#products-list').fadeOut("slow");
-        $('#cart-container').fadeIn("slow");
-        drawCartProducts(cart);
-        cartState = true;
-    } else {
-        $('#products-list').fadeIn("slow");
-        $('#cart-container').fadeOut("slow");
-        cartState = false;
-    }
+    hideAll();
+    $('#cart-container').fadeIn("slow");
+    drawCartProducts(cart);
 });
+
+
+

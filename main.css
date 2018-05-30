@@ -69,6 +69,41 @@ time, mark, audio, video {
 .clearfix {
     clear: both;
 }
+.prod{
+    position: relative
+}
+
+.popup{
+    position: fixed;
+    background-color:rgba(0,0,0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index:999;
+    text-align: center
+
+}
+.poza {
+    position: absolute;
+    width: 310px;
+    left: 50%;
+    margin-left: -150px;
+    top: 100px;
+    overflow: hidden;
+}
+.poza img{
+    width: 310px;
+    height: auto
+}
+
+.titlu{
+    background-color:#fff;
+    font-size:20px;
+    padding: 15px
+
+}
 
 #products-list {
     margin: 0;
@@ -206,3 +241,19 @@ Urmatorul css va fi pentru plasare comanda
     background: #f08686;
     display: none;
 }
+
+#cart-products {
+    list-style-type: none;
+}
+
+
+.qty {
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    padding-top:0;
+    padding-bottom: 0
+
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}

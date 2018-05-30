@@ -32,7 +32,6 @@ function drawtopMenu() {
         a.href= "#";
         a.classList.add("nav-top-button");
         a.setAttribute('identifier', topMenu.menuLinks[i].identifier)
-        
         li.appendChild(a);
         topMenuUlElement.appendChild(li);
     }
@@ -42,5 +41,15 @@ drawtopMenu();
 
 $(".nav-top-button").click(function() {
     var clickedButton = $(this).attr('identifier');
+    hideAll();
+    
     $('#cms-' + clickedButton).show();
 });
+
+// functia de mai jos ascunde toate 
+// container-ele din DOM
+function hideAll() {
+    $('.cms').hide();
+    $('#products-list').hide();
+    $('#cart-container').hide();
+}
