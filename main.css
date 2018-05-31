@@ -59,20 +59,43 @@ time, mark, audio, video {
 }
 
 .menu {
-    width: 130px;
+    width: 10%;
     height: 100%;
     float: left;
     margin-top: 20px;
+    text-align: left;
 }
 .menu a{
     text-decoration: none;
     color:#ffffff;
-    font-size: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 25px;
 }
 
+.categ{
+    width: 0%;
+    background: rgb(135, 169, 231);
+    border-radius: 0 15px 15px 0;
+    transition: width 0.3s;
+}
+
+.categ:hover {
+    width: 100%;
+}
+
+.categ a{
+    color: rgba(0, 0, 0, 0.7);
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.categ a:active {
+    color: red;
+}
 .container {
-    width: calc(100% - 130px);
-    float: left;
+    width: 90%;
+    float: right;
 }
 
 .clearfix {
@@ -117,7 +140,9 @@ time, mark, audio, video {
 #products-list {
     margin: 0;
     padding: 0px;
+    text-align: center;
     list-style: none;
+    clear: both;
 }
 
 #products-list li{
@@ -157,10 +182,7 @@ time, mark, audio, video {
     border: 1px solid black;
 }
 
-.categ a{
-    color: blue;
-    margin-left: 10px;
-}
+
 .top-menu-placer {
     margin: 66px 0px;
     float: right;
@@ -206,7 +228,15 @@ time, mark, audio, video {
     list-style-type: none;
 }
 .top-menu a{
+    color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
+}
+
+#top-menu a:hover{
+    color: rgb(135, 169, 231);
+}
+#top-menu a:active{
+    color: red;
 }
 #top-menu li{
     padding-right: 30px;
