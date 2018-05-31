@@ -1,8 +1,4 @@
 function drawCartProducts(cart) {
-    //  cart = [
-    //     {sku: 2, categoryId: "tric"},
-    //     {sku: 2, categoryId: "tric"}
-    // ]
     var cartProductsElement = document.getElementById('cart-products');
     // sterge tot ce e in cart
     cartProductsElement.innerHTML = '';
@@ -19,7 +15,7 @@ function drawCartProducts(cart) {
         }
 
         li.innerHTML = "<input type='number' min='1' name='quantity' value='" + cart[i].qty + "' class='qty' data-sku='" + cart[i].sku + "' />" +
-            ' x ' + produsMare.title + " Pret: " + produsMare.price + " lei " + "<a href='#' data-sku='" + cart[i].sku + "' class='delete'>Delete</a>";
+            ' x ' + produsMare.title + "<br>" + " Pret: " + produsMare.price + " RON" + "<a href='#' data-sku='" + cart[i].sku + "' class='delete'>Șterge</a>";
 
         // adauga cate un li per fiecare produs din cart
         cartProductsElement.appendChild(li);
