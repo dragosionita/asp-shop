@@ -72,8 +72,15 @@ var products = {
     panto: [
         {
             title: "Pantofi cu gură",
-            sizes: ["32", "44", "55"],
+            sizes: ["40", "42", "42", "43", "44"],
             imageSource: "assets/img/man/pantofi/CrocodilShoes.jpg",
+            price: 500,
+            sku: 7
+        },
+        {
+            title: "Pantofi cu degete",
+            sizes: ["39", "40", "41", "42", "42"],
+            imageSource: "assets/img/man/pantofi/FingerShoes.jpg",
             price: 500,
             sku: 7
         },
