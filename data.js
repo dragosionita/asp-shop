@@ -81,7 +81,7 @@ var products = {
             title: "Pantofi cu degete",
             sizes: ["39", "40", "41", "42", "42"],
             imageSource: "assets/img/man/pantofi/FingerShoes.jpg",
-            price: 500,
+            price: 450,
             sku: 7
         },
     ]
