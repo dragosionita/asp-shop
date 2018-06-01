@@ -73,6 +73,9 @@ time, mark, audio, video {
     margin-left: 25px;
 }
 
+#navigation{
+    list-style-type: none;
+}
 .categ{
     width: 0%;
     background: rgb(135, 169, 231);
@@ -233,7 +236,7 @@ time, mark, audio, video {
 }
 
 #top-menu a:hover{
-    color: rgb(135, 169, 231);
+    color: rgb(45, 117, 250);
 }
 #top-menu a:active{
     color: red;
