@@ -32,6 +32,13 @@ var products = {
             sku: 2
         },
         {
+            title: "Tricou athletic cut cu imprimeu, pentru fotbal",
+            sizes: ["S", "M", "L", "XL", "XXL"],
+            imageSource: "assets/img/man/tricouri/tricou7.jpg",
+            price: 130,
+            sku: 2
+        },
+        {
             title: "Tricou cu decolteu și imprimeu ",
             sizes: ["M", "L", "XL"],
             imageSource: "assets/img/man/tricouri/tricou3.jpg",
