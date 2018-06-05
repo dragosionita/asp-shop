@@ -71,9 +71,15 @@ var products = {
     ],
     panto: [
         {
+<<<<<<< HEAD
             title: "Pantofi cu puf",
             sizes: ["32", "44", "55"],
             imageSource: "assets/img/panto1.jpg",
+=======
+            title: "Pantofi cu gură",
+            sizes: ["32", "44", "55"],
+            imageSource: "assets/img/man/pantofi/CrocodilShoes.jpg",
+>>>>>>> parent of da0267a... Adaugat pantof cu deget
             price: 500,
             sku: 7
         },
