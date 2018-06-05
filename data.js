@@ -79,6 +79,9 @@ var products = {
             title: "Pantofi cu gură",
             sizes: ["32", "44", "55"],
             imageSource: "assets/img/man/pantofi/CrocodilShoes.jpg",
+<<<<<<< HEAD
+>>>>>>> parent of da0267a... Adaugat pantof cu deget
+=======
 >>>>>>> parent of da0267a... Adaugat pantof cu deget
             price: 500,
             sku: 7
