@@ -66,7 +66,7 @@ var products = {
             sizes: ["M", "L", "XL"],
             imageSource: "assets/img/man/geci/geaca1.jpg",
             price: 600,
-            sku: 6
+            sku: 7
         }
     ],
     panto: [
@@ -75,14 +75,14 @@ var products = {
             sizes: ["40", "42", "42", "43", "44"],
             imageSource: "assets/img/man/pantofi/CrocodilShoes.jpg",
             price: 500,
-            sku: 7
+            sku: 8
         },
         {
             title: "Pantofi cu degete",
             sizes: ["39", "40", "41", "42", "42"],
             imageSource: "assets/img/man/pantofi/FingerShoes.jpg",
             price: 500,
-            sku: 7
+            sku: 9
         },
     ]
 }
