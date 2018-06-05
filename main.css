@@ -64,7 +64,7 @@ time, mark, audio, video {
     float: left;
     margin-top: 20px;
     text-align: right;
-    background-color: rgba(125, 247, 125, 0.4);
+    /* background-color: rgba(125, 247, 125, 0.4); */
 }
 .menu a{
     font-size: 20px;
