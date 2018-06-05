@@ -65,7 +65,7 @@ function drawProducts(categoryId) {
 
         var p2 = document.createElement("p");
         p2.className = "product-price";
-        p2.innerText = products[categoryId][i].price + " RON";
+        p2.innerText = products[categoryId][i].price + " Lei";
 
         
         li.appendChild(imageSource);

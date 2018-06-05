@@ -179,10 +179,6 @@ time, mark, audio, video {
     transition: .3s ease;
 }
 
-#products-list li:hover {
-    transform: scale(1.1);
-}
-
 #cart-container {
     border-radius: 25px;
     display: none;
@@ -194,6 +190,7 @@ time, mark, audio, video {
     background: #f08686;
     box-shadow: 2px 2px 4px rgb(31, 31, 31);
 }
+
 #cart-container h1 {
     font-size: 200%;
     font-weight: bold;
