@@ -159,6 +159,10 @@ time, mark, audio, video {
     transition: .3s ease;
 }
 
+#products-list li:hover {
+    transform: scale(1.1);
+}
+
 #cart-container {
     border-radius: 25px;
     display: none;
