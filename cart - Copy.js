@@ -3,16 +3,6 @@ function drawCartProducts(cart) {
     //     {sku: 2, categoryId: "tric"},
     //     {sku: 2, categoryId: "tric"}
     // ]
-
-    if (localStorage.getItem('cart')) {
-        cart = JSON.parse(localStorage.getItem('cart'));
-    }
-    else {
-        cart = JSON.parse(cart);
-    
-    }
-
-
     var cartProductsElement = document.getElementById('cart-products');
     // sterge tot ce e in cart
     cartProductsElement.innerHTML = '';
@@ -35,14 +25,6 @@ function drawCartProducts(cart) {
         cartProductsElement.appendChild(li);
 
 
-
-
-
-        //
-      
-            
-
-
       //
       var deleteBtn = document.querySelectorAll('.delete');
       for (let x = 0; x < deleteBtn.length; x++) {
@@ -59,7 +41,6 @@ function drawCartProducts(cart) {
 
               }
               console.log(cart)
-              localStorage.setItem('cart', JSON.stringify(cart));
               drawCartProducts(cart)
               calTotal()
           });
@@ -78,7 +59,6 @@ function drawCartProducts(cart) {
                 cart[index].qty = Number(val);
                 // console.log(cart)
                 // drawCartProducts(cart)
-                localStorage.setItem('cart', JSON.stringify(cart));
                 calTotal()
                 
 
@@ -127,9 +107,7 @@ function drawCartProducts(cart) {
 
 
 
-    if(li){
-        cartProductsElement.appendChild(totalDiv)
-    }
+    cartProductsElement.appendChild(totalDiv)
 
 }
 

@@ -20,9 +20,6 @@ $('.categ a').click(function()  {
 // metoda de a adauga evenimente pe toate butoanele care au clasa 
 // add-to-cart
 function prepareAddToCart() {
-    if (localStorage.getItem('cart')) {
-        cart = JSON.parse(localStorage.getItem('cart'));
-    }
     $('.add-to-cart').click(function() {
         var product = {
             sku: $(this).attr("sku"),
@@ -71,7 +68,7 @@ function prepareAddToCart() {
             cart.push(product);
         }
             
-       
+        
         
 
         swal({
@@ -82,7 +79,7 @@ function prepareAddToCart() {
                 
             }
         });
-        localStorage.setItem('cart', JSON.stringify(cart));
+
         console.log('cart', cart);
 
               
