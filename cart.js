@@ -1,4 +1,18 @@
 function drawCartProducts(cart) {
+    //  cart = [
+    //     {sku: 2, categoryId: "tric"},
+    //     {sku: 2, categoryId: "tric"}
+    // ]
+
+    if (localStorage.getItem('cart')) {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    else {
+        cart = JSON.parse(cart);
+    
+    }
+
+
     var cartProductsElement = document.getElementById('cart-products');
     // sterge tot ce e in cart
     cartProductsElement.innerHTML = '';
@@ -15,33 +29,43 @@ function drawCartProducts(cart) {
         }
 
         li.innerHTML = "<input type='number' min='1' name='quantity' value='" + cart[i].qty + "' class='qty' data-sku='" + cart[i].sku + "' />" +
-            ' x ' + produsMare.title + "<br>" + " Pret: " + produsMare.price + " RON" + "<a href='#' data-sku='" + cart[i].sku + "' class='delete'>Șterge</a>";
+            ' x ' + produsMare.title + " Pret: " + produsMare.price + " lei " + "<a href='#' data-sku='" + cart[i].sku + "' class='delete'>Delete</a>";
 
         // adauga cate un li per fiecare produs din cart
         cartProductsElement.appendChild(li);
 
 
-        var deleteBtn = document.querySelectorAll('.delete');
-        for (let x = 0; x < deleteBtn.length; x++) {
-            deleteBtn[x].addEventListener("click", function() {
-                console.log("sku del=" + deleteBtn[x].dataset.sku);
-                var skuDel = deleteBtn[x].dataset.sku;
-                var index = cart.findIndex(x => x.sku == skuDel);
-                for (let j = 0; j < cart.length; j++) {
-                    console.log("sku cart=" + cart[j].sku)
-                    if (deleteBtn[x].dataset.sku == cart[j].sku) {
-                        cart.splice(index, 1);
-                        break;
-                    }
-
-                }
-                console.log(cart)
-                drawCartProducts(cart)
-                calTotal()
-            });
 
 
-        }
+
+        //
+      
+            
+
+
+      //
+      var deleteBtn = document.querySelectorAll('.delete');
+      for (let x = 0; x < deleteBtn.length; x++) {
+          deleteBtn[x].addEventListener("click", function() {
+          ///    console.log("sku del=" + deleteBtn[x].dataset.sku);
+              var skuDel = deleteBtn[x].dataset.sku;
+              var index = cart.findIndex(x => x.sku == skuDel);
+              for (let j = 0; j < cart.length; j++) {
+                  console.log("sku cart=" + cart[j].sku)
+                  if (deleteBtn[x].dataset.sku == cart[j].sku) {
+                      cart.splice(index, 1);
+                      break;
+                  }
+
+              }
+              console.log(cart)
+              localStorage.setItem('cart', JSON.stringify(cart));
+              drawCartProducts(cart)
+              calTotal()
+          });
+
+
+      }
 
 
         var quantity = document.querySelectorAll('.qty');
@@ -53,7 +77,10 @@ function drawCartProducts(cart) {
                 var index = cart.findIndex(x => x.sku == skuQty);
                 cart[index].qty = Number(val);
                 // console.log(cart)
+                // drawCartProducts(cart)
+                localStorage.setItem('cart', JSON.stringify(cart));
                 calTotal()
+                
 
             })
 
@@ -68,7 +95,6 @@ function drawCartProducts(cart) {
             var total = ""
             // totalDiv.innerHTML =total
 
-            var suma = 0;
             for (var x = 0; x < cart.length; x++) {
                 var skuu = cart[x].sku;
                 // console.log(skuu)
@@ -89,17 +115,10 @@ function drawCartProducts(cart) {
                         ttotal += pret * cart[x].qty
                         //console.log("ttotal= "+ttotal)
                     }
-
                 }
-
-
             }
-
-
-
-            totalDiv.innerHTML = "total = " + ttotal + " lei"
-
-        }
+            totalDiv.innerHTML = "total = " + ttotal + " lei";
+          }
 
 
         calTotal()
@@ -108,7 +127,9 @@ function drawCartProducts(cart) {
 
 
 
-    cartProductsElement.appendChild(totalDiv)
+    if(li){
+        cartProductsElement.appendChild(totalDiv)
+    }
 
 }
 

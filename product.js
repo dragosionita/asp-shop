@@ -27,7 +27,7 @@ function drawProducts(categoryId) {
 
         var p1 = document.createElement("p");
         p1.className = "product-size";
-        p1.innerText = "Mărime: ";
+        p1.innerText = "Marime";
 
         //create popup
         var popup=document.createElement('div');
@@ -58,14 +58,14 @@ function drawProducts(categoryId) {
 
         var addToCartButton = document.createElement("button");
         addToCartButton.className = "add-to-cart";
-        addToCartButton.innerText = "Adaugă-n coș!";
+        addToCartButton.innerText = "Add to cart";
 
         addToCartButton.setAttribute("sku", products[categoryId][i].sku);
         addToCartButton.setAttribute("category-id", categoryId);
 
         var p2 = document.createElement("p");
         p2.className = "product-price";
-        p2.innerText = "Preț: " + products[categoryId][i].price + " RON";
+        p2.innerText = products[categoryId][i].price + " RON";
 
         
         li.appendChild(imageSource);

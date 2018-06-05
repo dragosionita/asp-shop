@@ -20,6 +20,9 @@ $('.categ a').click(function()  {
 // metoda de a adauga evenimente pe toate butoanele care au clasa 
 // add-to-cart
 function prepareAddToCart() {
+    if (localStorage.getItem('cart')) {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    }
     $('.add-to-cart').click(function() {
         var product = {
             sku: $(this).attr("sku"),
@@ -27,21 +30,48 @@ function prepareAddToCart() {
             qty: 1
         }
         
-        if (cart.length != 0) {
-            for(var i = 0; i < cart.length; i++) {
-                if (cart[i].sku == product.sku) {
-                    cart[i].qty++;
-                } else {
-                    cart.push(product);
-                }
+        // if (cart.length != 0) {
+        //     for(var i = 0; i < cart.length; i++) {
+        //         console.log(cart[i].sku)
+        //         console.log(product.sku)
+        //         if (cart[i].sku == product.sku) {
+        //             cart[i].qty++;
+        //             console.log("sunt in if")
+                    
+                    
+        //         } else {
+                   
+        //             cart.push(product);
+        //             console.log("sunt in else")
+                    
+                    
+        //         }
+        //         console.log("sunt in break")
+        //         break;
+        //     }
+        // } else {
+        //     cart.push(product);
+        //     console.log("sunt in ultimul else")
+        // }
 
-                break;
+
+
+
+        if(cart.length !=0){
+
+            var skyNew =product.sku;    
+            var index = cart.findIndex(x => x.sku == skyNew);
+            if(index > -1){
+                cart[index].qty++
+            }else{
+                cart.push(product);
             }
-        } else {
+
+        }else{
             cart.push(product);
         }
             
-        
+       
         
 
         swal({
@@ -52,7 +82,7 @@ function prepareAddToCart() {
                 
             }
         });
-
+        localStorage.setItem('cart', JSON.stringify(cart));
         console.log('cart', cart);
 
               
