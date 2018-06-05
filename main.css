@@ -63,11 +63,10 @@ time, mark, audio, video {
     height: 100%;
     float: left;
     margin-top: 20px;
-    text-align: left;
+    text-align: right;
+    background-color: rgba(125, 247, 125, 0.4);
 }
 .menu a{
-    text-decoration: none;
-    color:#ffffff;
     font-size: 20px;
     font-weight: 500;
     margin-left: 25px;
@@ -100,7 +99,7 @@ time, mark, audio, video {
     transition: width 0.3s;
 }
 
-.categ:hover {
+.categ:hover{
     width: 100%;
 }
 
@@ -182,7 +181,7 @@ time, mark, audio, video {
 #cart-container {
     border-radius: 25px;
     display: none;
-    margin: 15px auto 0 auto;
+    margin: 15px auto 50px auto;
     width: 65%;
     height: 100%;
     min-height: 300px;

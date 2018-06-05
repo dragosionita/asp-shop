@@ -1,7 +1,7 @@
 var navigation = {
     categories: [
         {
-            name: "Tricou",
+            name: "Tricouri",
             id: "trico"
         },
         {
@@ -36,35 +36,35 @@ var products = {
             sizes: ["S", "M", "L", "XL", "XXL"],
             imageSource: "assets/img/man/tricouri/tricou7.jpg",
             price: 130,
-            sku: 2
+            sku: 3
         },
         {
             title: "Tricou cu decolteu și imprimeu ",
             sizes: ["M", "L", "XL"],
             imageSource: "assets/img/man/tricouri/tricou3.jpg",
             price: 300,
-            sku: 3
+            sku: 4
         },
         {
             title: "Tricou cu buzunar pe piept",
             sizes: ["M", "L", "XL"],
             imageSource: "assets/img/man/tricouri/tricou4.jpg",
             price: 400,
-            sku: 4
+            sku: 5
         },
         {
             title: "Tricou polo cu broderie cu logo",
             sizes: ["M", "L", "XL"],
             imageSource: "assets/img/man/tricouri/tricou5.jpg",
             price: 500,
-            sku: 5
+            sku: 6
         },
         {
             title: "Tricou cu imprimeu cauciucat",
             sizes: ["M", "L", "XL"],
             imageSource: "assets/img/man/tricouri/tricou6.jpg",
             price: 600,
-            sku: 6
+            sku: 7
         }
     ],
     gec: [
@@ -73,7 +73,7 @@ var products = {
             sizes: ["M", "L", "XL"],
             imageSource: "assets/img/man/geci/geaca1.jpg",
             price: 600,
-            sku: 7
+            sku: 8
         }
     ],
     panto: [
@@ -82,13 +82,6 @@ var products = {
             sizes: ["40", "42", "42", "43", "44"],
             imageSource: "assets/img/man/pantofi/CrocodilShoes.jpg",
             price: 500,
-            sku: 8
-        },
-        {
-            title: "Pantofi cu degete",
-            sizes: ["39", "40", "41", "42", "42"],
-            imageSource: "assets/img/man/pantofi/FingerShoes.jpg",
-            price: 500,
             sku: 9
         },
         {
@@ -96,7 +89,7 @@ var products = {
             sizes: ["39", "40", "41", "42", "42"],
             imageSource: "assets/img/man/pantofi/FingerShoes.jpg",
             price: 450,
-            sku: 7
+            sku: 10
         },
     ]
 }
