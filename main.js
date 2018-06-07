@@ -24,9 +24,11 @@ function prepareAddToCart() {
         cart = JSON.parse(localStorage.getItem('cart'));
     }
     $('.add-to-cart').click(function() {
+        // var marime=$(this).attr("marime")|| ;
         var product = {
             sku: $(this).attr("sku"),
             categoryId: $(this).attr("category-id"),
+            size:$(this).attr("marime"),
             qty: 1
         }
         
@@ -59,10 +61,11 @@ function prepareAddToCart() {
 
         if(cart.length !=0){
 
-            var skyNew =product.sku;    
+            var skyNew = product.sku;    
+            var marime=cart.marime;
             var index = cart.findIndex(x => x.sku == skyNew);
-            if(index > -1){
-                cart[index].qty++
+            if(index > -1 && cart[index].size==product.size){
+                cart[index].qty++;
             }else{
                 cart.push(product);
             }

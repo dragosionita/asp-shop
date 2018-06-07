@@ -30,7 +30,7 @@ function drawCartProducts(cart) {
         }
 
         li.innerHTML = "<input type='number' min='1' name='quantity' value='" + cart[i].qty + "' class='qty' data-sku='" + cart[i].sku + "' />" +
-            ' x ' + produsMare.title + " Pret: " + produsMare.price + " lei " + "<a href='#' data-sku='" + cart[i].sku + "' class='delete'>Delete</a>";
+            ' x ' + produsMare.title + "/ Marime "+ cart[i].size +"/ Pret: " + produsMare.price + " lei " + "<a href='#' data-sku='" + cart[i].sku + "'  data-marime='" + cart[i].size + "'  class='delete'>Delete</a>";
 
         // adauga cate un li per fiecare produs din cart
         cartProductsElement.appendChild(li);
@@ -52,8 +52,9 @@ function drawCartProducts(cart) {
               var skuDel = deleteBtn[x].dataset.sku;
               var index = cart.findIndex(x => x.sku == skuDel);
               for (let j = 0; j < cart.length; j++) {
-                  console.log("sku cart=" + cart[j].sku)
-                  if (deleteBtn[x].dataset.sku == cart[j].sku) {
+                  console.log( "marime btn "+ deleteBtn[x].dataset.marime)
+                  console.log("marime " + cart[j].size)
+                  if (deleteBtn[x].dataset.sku == cart[j].sku && deleteBtn[x].dataset.marime==cart[j].size) {
                       cart.splice(index, 1);
                       break;
                   }
@@ -92,7 +93,7 @@ function drawCartProducts(cart) {
         }
         var totalDiv = document.createElement("div")
 
- //functia care claculeaza totalul
+ //functia care calculeaza totalul
         function calTotal() {
             var ttotal = 0;
             var total = ""

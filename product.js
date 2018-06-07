@@ -61,6 +61,7 @@ function drawProducts(categoryId) {
         var addToCartButton = document.createElement("button");
         addToCartButton.className = "add-to-cart";
         addToCartButton.innerText = "Add to cart";
+        addToCartButton.setAttribute("marime", products[categoryId][i].sizes[0]);
 
         addToCartButton.setAttribute("sku", products[categoryId][i].sku);
         addToCartButton.setAttribute("category-id", categoryId);
@@ -92,6 +93,13 @@ function drawProducts(categoryId) {
         popup[x].addEventListener("click", function(){
             popup[x].style.display="none"
             })
+    }
+    var select=document.querySelectorAll("select");
+    for (let x = 0; x < select.length; x++){
+        select[x].addEventListener("change", function(){
+            select[x].parentNode.nextSibling.nextSibling.setAttribute("marime", select[x].value)
+           // console.log(select[x].value, select[x].parentNode.nextSibling.nextSibling.setAttribute("marime", select[x].value))
+        })
     }
 
 }
