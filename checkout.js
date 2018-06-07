@@ -7,8 +7,11 @@ var order = {
 
 var isCheckoutOn = false;
 
+var int=document.querySelector("#cart-products");
+
 $('#to-checkout').click(function() {
-    if (cart != "" ){
+    //console.log(int.innerHTML)
+    if (cart != "" &&  int.innerHTML !="" ){
 
     if (isCheckoutOn) {
         $('#to-checkout').text("Continua");

@@ -4,6 +4,7 @@ function drawCartProducts(cart) {
     //     {sku: 2, categoryId: "tric"}
     // ]
 
+     //obtinerea continutului cosului stocat in local stoarage
     if (localStorage.getItem('cart')) {
         cart = JSON.parse(localStorage.getItem('cart'));
     }
@@ -43,7 +44,7 @@ function drawCartProducts(cart) {
             
 
 
-      //
+      //adaugare de actiune pe butoanele delete
       var deleteBtn = document.querySelectorAll('.delete');
       for (let x = 0; x < deleteBtn.length; x++) {
           deleteBtn[x].addEventListener("click", function() {
@@ -58,7 +59,9 @@ function drawCartProducts(cart) {
                   }
 
               }
+              
               console.log(cart)
+               //update in local stoarage
               localStorage.setItem('cart', JSON.stringify(cart));
               drawCartProducts(cart)
               calTotal()
@@ -67,7 +70,7 @@ function drawCartProducts(cart) {
 
       }
 
-
+ //modif cantitate in cos
         var quantity = document.querySelectorAll('.qty');
         for (let x = 0; x < deleteBtn.length; x++) {
             quantity[x].addEventListener("change", function() {
@@ -78,6 +81,7 @@ function drawCartProducts(cart) {
                 cart[index].qty = Number(val);
                 // console.log(cart)
                 // drawCartProducts(cart)
+                //update in local stoarage
                 localStorage.setItem('cart', JSON.stringify(cart));
                 calTotal()
                 
@@ -88,20 +92,16 @@ function drawCartProducts(cart) {
         }
         var totalDiv = document.createElement("div")
 
-
+ //functia care claculeaza totalul
         function calTotal() {
-
             var ttotal = 0;
             var total = ""
             // totalDiv.innerHTML =total
-
             for (var x = 0; x < cart.length; x++) {
                 var skuu = cart[x].sku;
                 // console.log(skuu)
-
                 var cat = cart[x].categoryId
                 //   console.log(cat)
-
                 var pret;
 
                 // console.log(pret)
