@@ -80,7 +80,7 @@ function drawCartProducts(cart) {
                 var skuQty = quantity[x].dataset.sku;
                 var index = cart.findIndex(x => x.sku == skuQty);
                 cart[index].qty = Number(val);
-                // console.log(cart)
+                  console.log(cart)
                 // drawCartProducts(cart)
                 //update in local stoarage
                 localStorage.setItem('cart', JSON.stringify(cart));

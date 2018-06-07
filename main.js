@@ -59,22 +59,32 @@ function prepareAddToCart() {
 
 
 
+
         if(cart.length !=0){
-
-            var skyNew = product.sku;    
-            var marime=cart.marime;
-            var index = cart.findIndex(x => x.sku == skyNew);
-            if(index > -1 && cart[index].size==product.size){
-                cart[index].qty++;
-            }else{
-                cart.push(product);
-            }
-
-        }else{
-            cart.push(product);
-        }
             
-       
+                        var skyNew = product.sku;    
+                        var marime=cart.marime;
+                        var indexSku = cart.findIndex(y => y.sku==product.sku && y.size==product.size);
+               
+                        if(indexSku > -1 ){
+                            cart[indexSku].qty++;
+                        }else{
+                            cart.push(product);
+                        }
+            
+                    }else{
+                        cart.push(product);
+                    }
+                        
+
+
+
+
+
+
+
+
+
         
 
         swal({
@@ -109,3 +119,7 @@ $('#cart-button').click(function() {
 
 
 
+// function findElement(a) {
+//     if
+//     return element > 13;
+//   }
