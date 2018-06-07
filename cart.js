@@ -93,7 +93,7 @@ function drawCartProducts(cart) {
         }
         var totalDiv = document.createElement("div")
 
- //functia care calculeaza totalul
+ //functia care calculeaza totalul 
         function calTotal() {
             var ttotal = 0;
             var total = ""

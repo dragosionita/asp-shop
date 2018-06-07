@@ -107,3 +107,6 @@ function drawProducts(categoryId) {
 drawProducts(currentCategory);
 
 
+
+
+
