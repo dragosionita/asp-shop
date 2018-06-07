@@ -55,6 +55,8 @@ function drawProducts(categoryId) {
             option.innerText = products[categoryId][i].sizes[j];
             select.appendChild(option);
         }
+        var center=document.createElement("div");
+        center.classList.add("select_centrat")
 
         var addToCartButton = document.createElement("button");
         addToCartButton.className = "add-to-cart";
@@ -70,8 +72,10 @@ function drawProducts(categoryId) {
         
         li.appendChild(imageSource);
         li.appendChild(h1);
-        li.appendChild(p1);
-        li.appendChild(select);
+        
+        li.appendChild(center)
+        center.appendChild(p1);
+        center.appendChild(select);
         li.appendChild(p2);
         li.appendChild(addToCartButton);
         productListElement.appendChild(li);
