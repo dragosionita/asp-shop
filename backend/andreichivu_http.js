@@ -127,13 +127,21 @@ app.get('/products', (req, res) => {
             },
         ]
     }
-
     res.send(products);
 }) 
+
+app.get('/cms/livrare', (req, res) => {
+    var sql = "select * from cms where id = 'livrare'";
+    con.query(sql, (err, result) => {
+        if (err) throw err;
+        res.send(result[0].content);
+    })
+})
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
 });
+
 
 
 app.get('/test', (req, res) => {
