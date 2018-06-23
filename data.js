@@ -1,3 +1,4 @@
+/*
 var navigation = {
     categories: [
         {
@@ -14,6 +15,10 @@ var navigation = {
         }
     ]
 }
+*/
+
+var navigation = {};
+
 
 var products = {
     trico: [

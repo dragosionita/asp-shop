@@ -123,3 +123,7 @@ $('#cart-button').click(function() {
 //     if
 //     return element > 13;
 //   }
+
+$.get("http://localhost:3000/test", function(data) {
+  console.log('data', data);
+});

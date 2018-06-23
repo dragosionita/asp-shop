@@ -17,4 +17,8 @@ function drawNavigation() {
     }
 }
 
-drawNavigation();
+$.get('http://localhost:3000/navigation', data => {
+    console.log('ce avem aici:', data);
+    navigation = data;
+    drawNavigation();
+});
