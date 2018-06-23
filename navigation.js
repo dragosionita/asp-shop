@@ -27,18 +27,11 @@ $.get('http://localhost:3000/navigation', data => {
 
 
 function addEventsAfter() {
-        // eveniment click pe navigatie -> schimbat categortii
-    $('.categ a').click(function()  {
-        // le ascund pe toate
-        hideAll();
-
-        // setez categoria curenta cu atributul cat-id de pe fiecare <a>
-        currentCategory = $(this).attr("cat-id");
-        //sterge toate produsele cu dom cu tot si creaza altele noi
-        //din categoria curenta
-        drawProducts(currentCategory);
-
-        //adauga evenimente de click pe produsele noi create
-        prepareAddToCart();
+        
+    $('.categ a').click(function()  {               // eveniment click pe navigatie -> schimbat categortii
+        hideAll();                                  // le ascund pe toate
+        currentCategory = $(this).attr("cat-id");   // setez categoria curenta cu atributul cat-id de pe fiecare <a>
+        drawProducts(currentCategory);              // sterge toate produsele cu dom cu tot si creaza altele noi din categoria curenta
+        prepareAddToCart();                         // adauga evenimente de click pe produsele noi create
     });
 }

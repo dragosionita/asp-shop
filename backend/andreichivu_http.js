@@ -1,3 +1,4 @@
+var mysql = require('mysql'); //metoa in node js prin care imi aduc libraria de mysql in node
 const express = require('express')
 const app = express()
 
@@ -7,7 +8,21 @@ app.use(function (req, res, next) {
     next();
 });
 
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  port: 3306,
+  database: "test"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+
 app.get('/navigation', (req, res) => {
+    /*
     var navigation = {
         categories: [
             {
@@ -24,8 +39,13 @@ app.get('/navigation', (req, res) => {
             }
         ]
     };
-
-    res.send(navigation);
+*/
+    var sql = "select * from categories";
+    con.query(sql, (err, result) => {
+        if (err) throw err;
+        res.send({'categories': result});
+    });
+    
 })
 
 app.get('/products', (req, res) => {
