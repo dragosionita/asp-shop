@@ -115,6 +115,7 @@ $.get("http://localhost:3000/products",function(data){
     products = data;
     afterEvents();
     drawProducts(currentCategory);
+    prepareAddToCart()
 });
 
 

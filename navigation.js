@@ -29,7 +29,6 @@ $.get('http://localhost:3000/navigation', data => {
 
 
 function addEventsAfter() {
-        
     $('.categ a').click(function()  {               // eveniment click pe navigatie -> schimbat categortii
         hideAll();                                  // le ascund pe toate
         currentCategory = $(this).attr("cat-id");   // setez categoria curenta cu atributul cat-id de pe fiecare <a>
