@@ -68,14 +68,44 @@ app.get('/',(req,res) => {
 });
 
 app.post('/plaseaza-comanda', (req, res) => {
-    var name = req.body.name;
-    var email = req.body.email;
-    var phone = req.body.phone;
+    let name = req.body.name;
+    let email = req.body.email;
+    let phone = req.body.phone;
 
-    var cart = req.body.cart;
-    console.log('CART:', cart);
+    let orderProducts = req.body.cart;
 
-    res.send({success: true});
+    var orderNumber = Math.floor(Math.random() * 100000000);
+
+    /*
+        a = "s";
+        b = "w";
+        `${a}${b}` = a+b Concatenarea(lipirea de texte) se poate face in 2 feluri in JS ;)
+    */
+
+    let orderSQL = `INSERT INTO orders (name, phone, email, order_number, date) VALUES ('${name}', '${phone}', '${email}', ${orderNumber}, NOW())`;
+
+    con.query(orderSQL, (err, result) => {
+        if (err) throw err;
+
+        let ultimulOrderId = result.insertId;
+
+        for (let i = 0; i < orderProducts.length; i++) {
+            let sku = orderProducts[i].sku;
+            let size = orderProducts[i].size;
+            let qty = orderProducts[i].qty;
+
+            let orderProductSQL = `INSERT INTO orders_products (orders_products_id, sku, size, qty) VALUES (${ultimulOrderId}, ${sku}, '${size}', ${qty})`;
+            con.query(orderProductSQL, (err, results) => {
+                if (err) throw err;
+
+                
+            })
+        }
+        res.send({success: true, orderNumber: orderNumber});
+
+    });
+
+    
 });
 
 app.get('/navigation', (req, res) => {

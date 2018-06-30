@@ -73,11 +73,10 @@ $('#place-order').click(function() {
     } else {
         console.log('Comanda ta: ', order);
         $.post('http://localhost:3000/plaseaza-comanda', order, response => {
-            console.log('CE A VENIT DE LA SERVER:', response);
-        });
+            var swalConfirmedOrder = order.name + " , comanda ta cu numarul #" + response.orderNumber + " a fost plasata cu success.";
 
-        var swalConfirmedOrder = order.name + " , comanda ta a fost plasata cu succes."; swal({ text: swalConfirmedOrder, type: "success", confirmButtonText: "Cool" });
-        //alert(order.name + "" + ', comanda ta a fost plasata.');
+            swal({ text: swalConfirmedOrder, type: "success", confirmButtonText: "Cool" });
+        });
     }
     
 });
