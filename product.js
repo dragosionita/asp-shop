@@ -105,6 +105,10 @@ function drawProducts(categoryId) {
 }
 
 
+$.get('http://localhost:3000/products', data => {
+    products = data;
+    drawProducts(currentCategory);
+});
 
 
 $.get("http://localhost:3000/products",function(data){

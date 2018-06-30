@@ -1,3 +1,4 @@
+var currentCategory = 'trico';
 
 function drawNavigation() {
     var navUlElement = document.getElementById("navigation");
@@ -17,6 +18,7 @@ function drawNavigation() {
     }
 }
 
+<<<<<<< HEAD
 
 var currentCategory = 'trico';
 
@@ -24,3 +26,22 @@ $.get("http://localhost:3000/navigation",function(data){
     navigation = data;
     drawNavigation();
 });
+=======
+$.get('http://localhost:3000/navigation', data => {
+    console.log('ce avem aici:', data);
+    navigation = data;
+    drawNavigation();
+    addEventsAfter();
+});
+
+
+function addEventsAfter() {
+        
+    $('.categ a').click(function()  {               // eveniment click pe navigatie -> schimbat categortii
+        hideAll();                                  // le ascund pe toate
+        currentCategory = $(this).attr("cat-id");   // setez categoria curenta cu atributul cat-id de pe fiecare <a>
+        drawProducts(currentCategory);              // sterge toate produsele cu dom cu tot si creaza altele noi din categoria curenta
+        prepareAddToCart();                         // adauga evenimente de click pe produsele noi create
+    });
+}
+>>>>>>> 51245a0c5462e90bca1338fbbca4eed0ee6bea1d
