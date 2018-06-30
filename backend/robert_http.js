@@ -1,21 +1,90 @@
-var navigation = {
-    categories: [
-        {
-            name: "Tricouri",
-            id: "trico"
-        },
-        {
-            name: "Geci",
-            id: "gec"
-        },
-        {
-            name: "Pantofi",
-            id: "panto"
-        }
-    ]
-}
+var mysql = require('mysql');
 
-var products = {
+const express = require('express')
+const app = express()
+
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    database:"test",
+    port: 3306,
+    password: ""
+  });
+
+
+
+
+app.get('/cms/contact',(req,res) => {
+    var sql = "select * from  cms where id = 'contact' ";
+    con.query(sql, (err, result)=> {
+        if (err) throw err;
+        res.send(result[0].content);
+    })
+});
+
+
+app.get('/cms/livrare',(req,res) => {
+    var sql = "select * from  cms where id = 'livrare' ";
+    con.query(sql, (err, result)=> {
+        if (err) throw err;
+        res.send(result[0].content);
+    })
+});
+
+
+app.get('/cms/despre',(req,res) => {
+ var sql = "select * from  cms where id = 'contact' ";
+    con.query(sql, (err, result)=> {
+        if (err) throw err;
+        res.send(result[0].content);
+    })
+});
+
+
+app.get('/',(req,res) => {
+    res.send('Hello World!')
+});
+
+
+
+
+app.get('/navigation', (req, res) => {
+    /*
+    var navigation = {
+        categories: [
+            {
+                name: "Tricouri",
+                id: "trico"
+            },
+            {
+                name: "Geci",
+                id: "gec"
+            },
+            {
+                name: "Pantofi",
+                id: "panto"
+            }
+        ]
+    };
+*/
+
+    var sql = "select * from categories";
+    con.query(sql, (err, result) => {
+        if (err) throw err;
+        res.send({'categories': result});
+    });
+    
+})
+
+app.get('/products', (req,res) => {
+ const products = {
     trico: [
         {
             title: "Tricou athletic cu imprimeu",
@@ -92,6 +161,18 @@ var products = {
             sku: 10
         },
     ]
-}
+ }
 
-var currentCategory = 'trico';
+ res.send(products);
+});
+
+app.get('/test',(req, res)=> {
+    res.send('This is a test');
+});
+
+app.listen(3000,() => {
+    console.log('Listening on port 3000!');
+
+
+    
+})

@@ -17,4 +17,10 @@ function drawNavigation() {
     }
 }
 
-drawNavigation();
+
+var currentCategory = 'trico';
+
+$.get("http://localhost:3000/navigation",function(data){
+    navigation = data;
+    drawNavigation();
+});
