@@ -51,7 +51,7 @@ app.get('/cms/livrare',(req,res) => {
 
 
 app.get('/cms/despre',(req,res) => {
- var sql = "select * from  cms where id = 'contact' ";
+ var sql = "select * from  cms where id = 'despre' ";
     con.query(sql, (err, result)=> {
         if (err) throw err;
         res.send(result[0].content);
