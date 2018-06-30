@@ -2,6 +2,10 @@ var mysql = require('mysql');
 const express = require('express')
 const app = express()
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 /**
  * Las pe oricine de la orice adresa sa se conecteze
  * la acest server
@@ -21,7 +25,7 @@ var con = mysql.createConnection({
     user: "root",
     database:"test",
     port: 3306,
-    password: ""
+    password: "dragosx"
   });
 
 
@@ -63,8 +67,16 @@ app.get('/',(req,res) => {
     res.send('<center><h1>ASP SHOP SERVER</h1></center>');
 });
 
+app.post('/plaseaza-comanda', (req, res) => {
+    var name = req.body.name;
+    var email = req.body.email;
+    var phone = req.body.phone;
 
+    var cart = req.body.cart;
+    console.log('CART:', cart);
 
+    res.send({success: true});
+});
 
 app.get('/navigation', (req, res) => {
     

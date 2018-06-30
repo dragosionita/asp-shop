@@ -34,12 +34,6 @@ function drawCartProducts(cart) {
 
         // adauga cate un li per fiecare produs din cart
         cartProductsElement.appendChild(li);
-
-
-
-
-
-        //
       
             
 

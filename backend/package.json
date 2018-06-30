@@ -4,6 +4,7 @@
   "description": "Backend Shop Online WD - cu nodeJS, ExpressJS si mySQL",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "4.16.3",
     "mysql": "2.15.0"
   },
