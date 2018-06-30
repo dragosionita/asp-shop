@@ -1,0 +1,33 @@
+{
+  "name": "asp-server-http",
+  "version": "1.0.1",
+  "description": "Backend Shop Online WD - cu nodeJS, ExpressJS si mySQL",
+  "main": "index.js",
+  "dependencies": {
+    "express": "4.16.3",
+    "mysql": "2.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragosionita/asp-shop.git"
+  },
+  "keywords": [
+    "wd",
+    "server",
+    "mysql",
+    "backend",
+    "express",
+    "http"
+  ],
+  "author": "Aspire G1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dragosionita/asp-shop/issues"
+  },
+  "homepage": "https://github.com/dragosionita/asp-shop#readme"
+}

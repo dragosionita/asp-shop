@@ -5,7 +5,18 @@ var con = mysql.createConnection({
     database: "test",
     user: "",
     pass: ""    
+    dasd
+    asd
+    adasda
+    das
+
 });
+
+
+{
+    "qsdasdas": "233",
+    "qsdasdas": "233",
+}
 
 con.connect(function(err){
     if (err) throw err;
