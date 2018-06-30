@@ -106,12 +106,8 @@ function drawProducts(categoryId) {
 
 
 $.get('http://localhost:3000/products', data => {
-    console.log('ce avem aici:', data);
     products = data;
     drawProducts(currentCategory);
 });
-
-
-
 
 
