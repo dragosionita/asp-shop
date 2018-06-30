@@ -18,6 +18,8 @@ function drawNavigation() {
     }
 }
 
+var currentCategory = 'trico';
+
 $.get('http://localhost:3000/navigation', data => {
     console.log('ce avem aici:', data);
     navigation = data;
