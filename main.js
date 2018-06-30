@@ -2,21 +2,6 @@
 var cart = [];
 
 // eveniment click pe navigatie -> schimbat categortii
-$('.categ a').click(function()  {
-    // le ascund pe toate
-    hideAll();
-
-    // setez categoria curenta cu atributul cat-id de pe fiecare <a>
-    currentCategory = $(this).attr("cat-id");
-
-    //sterge toate produsele cu dom cu tot si creaza altele noi
-    //din categoria curenta
-    drawProducts(currentCategory);
-
-    //adauga evenimente de click pe produsele noi create
-    prepareAddToCart();
-});
-
 // metoda de a adauga evenimente pe toate butoanele care au clasa 
 // add-to-cart
 function prepareAddToCart() {
